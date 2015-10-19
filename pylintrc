@@ -1,0 +1,12 @@
+[MASTER]
+extension-pkg-whitelist = limejudge.ptrace
+
+[MESSAGES CONTROL]
+disable = abstract-method,invalid-name,locally-disabled,locally-enabled,missing-docstring,redefined-variable-type,too-few-public-methods
+
+[REPORTS]
+output-format = colorized
+reports = no
+
+[FORMAT]
+max-line-length = 72
