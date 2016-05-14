@@ -42,12 +42,19 @@ def compile_cpp_into(src, dst, extra_flags=None):
     _compile_command(['g++', src, '-o', dst] + extra_flags)
 
 
+def compile_pas_into(src, dst, extra_flags=None):
+    if extra_flags is None:
+        extra_flags = []
+    _compile_command(['fpc', src, '-o' + dst] + extra_flags)
+
+
 FILETYPE_HANDLERS = {
     'c': compile_c_into,
     'cpp': compile_cpp_into,
+    'pas': compile_pas_into,
 }
 
-DEFAULT_FILETYPES = ['c', 'cpp']
+DEFAULT_FILETYPES = list(FILETYPE_HANDLERS)
 
 
 def compile_into(src, dst, filetypes=None, compiler_flags=None):
