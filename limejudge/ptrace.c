@@ -50,7 +50,7 @@ static struct PyModuleDef ptrace_module = {
 };
 
 PyMODINIT_FUNC
-PyInit_ptrace()
+PyInit_ptrace(void)
 {
     return PyModule_Create(&ptrace_module);
 }
