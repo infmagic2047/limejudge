@@ -11,6 +11,20 @@ def test_resource_limit_from_dict():
     assert rlimit.memory_limit == 67108864
 
 
+def test_resource_limit_equal():
+    rlimit1 = judge.ResourceLimit.from_dict({'time-limit': 0.1,
+                                             'memory-limit': 67108864})
+    rlimit2 = judge.ResourceLimit.from_dict({'time-limit': 0.1,
+                                             'memory-limit': 67108864})
+    rlimit3 = judge.ResourceLimit.from_dict({'time-limit': 0.2,
+                                             'memory-limit': 67108864})
+    rlimit4 = judge.ResourceLimit.from_dict({'time-limit': 0.1,
+                                             'memory-limit': 33554432})
+    assert rlimit1 == rlimit2
+    assert rlimit1 != rlimit3
+    assert rlimit1 != rlimit4
+
+
 def test_judge_run_time_limit_integer(tmpdir):
     testprog = os.path.join(os.path.dirname(__file__), 'progs',
                             'utime_limit.py')

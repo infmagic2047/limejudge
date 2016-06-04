@@ -31,6 +31,10 @@ class ResourceLimit:
         self.time_limit = time_limit
         self.memory_limit = memory_limit
 
+    def __eq__(self, other):
+        return (self.time_limit == other.time_limit and
+                self.memory_limit == other.memory_limit)
+
     @classmethod
     def from_dict(cls, rlimit_data):
         time_limit = rlimit_data['time-limit']
