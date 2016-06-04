@@ -6,11 +6,13 @@ __pycache__/
 
 # Distribution
 /*.egg-info/
+/.eggs/
 /build/
 /dist/
 
 # Coverage
 *,cover
+/.cache/
 /.coverage
 /.coverage.*
 /coverage.xml
