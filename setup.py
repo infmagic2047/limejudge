@@ -21,9 +21,9 @@ setup(
     version=get_version(),
     description='Simple judge tool for OI contests',
     long_description=read_file('README.rst'),
-    url='https://github.com/yyt16384/limejudge',
+    url='https://github.com/infmagic2047/limejudge',
     author='Yutao Yuan',
-    author_email='yyt16384@gmail.com',
+    author_email='infmagic2047reg@outlook.com',
     license='MIT',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
