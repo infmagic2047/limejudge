@@ -8,7 +8,7 @@ def read_file(fname):
 
 
 def get_version():
-    content = read_file('limejudge/__init__.py')
+    content = read_file('src/limejudge/__init__.py')
     regex = r'^__version__ = [\'"]([^\'"]*)[\'"]$'
     match = re.search(regex, content, re.M)
     if not match:
@@ -35,9 +35,10 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Topic :: Education',
     ],
-    packages=find_packages(exclude=['tests*']),
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     ext_modules=[
-        Extension('limejudge.ptrace', ['limejudge/ptrace.c']),
+        Extension('limejudge.ptrace', ['src/limejudge/ptrace.c']),
     ],
     install_requires=[
         'PyYAML',
